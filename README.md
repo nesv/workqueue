@@ -20,7 +20,7 @@ import (
 
 func main() {
 	// Create a new WorkQueue.
-	wq := New(1024)
+	wq := workqueue.New(1024)
 
 	// Use a sync.WaitGroup to make sure we process all work before
 	// exiting.

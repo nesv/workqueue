@@ -46,7 +46,7 @@ func TestWorkQueue(t *testing.T) {
 	}
 }
 
-func ExampleNew() {
+func ExampleNewN() {
 	// Create a new WorkQueue.
 	wq := New(1024)
 

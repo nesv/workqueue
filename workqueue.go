@@ -3,6 +3,8 @@
 // package utilizes a lot of the inherent properties of channels.
 package workqueue
 
+import "runtime"
+
 // Copyright 2017 Nick Saika
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +22,14 @@ package workqueue
 // WorkQueue is a channel type that you can send Work on.
 type WorkQueue chan Work
 
-// New creates and returns a new WorkQueue.
-func New(numWorkers int) WorkQueue {
+// New creates a WorkQueue with runtime.NumCPU() workers.
+func New() WorkQueue {
+	return NewN(runtime.NumCPU())
+}
+
+// NewN creates and returns a new WorkQueue that has the specified number
+// of workers.
+func NewN(numWorkers int) WorkQueue {
 	queue := make(WorkQueue)
 	d := make(dispatcher, numWorkers)
 	go d.dispatch(queue)

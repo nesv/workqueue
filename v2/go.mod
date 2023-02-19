@@ -1,3 +1,3 @@
-module github.com/nesv/workqueue/v2
+module go.nesv.ca/workqueue
 
 go 1.18

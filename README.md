@@ -4,7 +4,7 @@ Package workqueue provides a means to queueing work.
 
 ## Documentation
 
-[GoDoc](https://pkg.go.dev/github.com/nesv/workqueue/v2)
+[GoDoc](https://pkg.go.dev/go.nesv.ca/workqueue/v2)
 
 ## Example
 
@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"sync"
 
-	workqueue "github.com/nesv/workqueue/v2"
+	workqueue "go.nesv.ca/workqueue/v2"
 )
 
 func main() {
